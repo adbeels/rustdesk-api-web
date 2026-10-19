@@ -275,56 +275,8 @@
   "PleaseSelectData": {
     "One": "請選擇資料"
   },
-  "PasswordType": {
-    "One": "密碼型別"
-  },
-  "OncePassword": {
-    "One": "一次性密碼"
-  },
-  "FixedPassword": {
-    "One": "固定密碼"
-  },
-  "FixedPasswordWarning": {
-    "One": "固定密碼可能存在洩露風險，請謹慎使用，建議使用一次性密碼"
-  },
   "ExpireTime": {
     "One": "過期時間"
-  },
-  "ShareByWebClient": {
-    "One": "通過 Web Client 分享"
-  },
-  "Minutes": {
-    "One": "{param} 分鐘"
-  },
-  "Hours": {
-    "One": "{param} 小時"
-  },
-  "Days": {
-    "One": "{param} 天"
-  },
-  "Weeks": {
-    "One": "{param} 周"
-  },
-  "Months": {
-    "One": "{param} 月"
-  },
-  "Forever": {
-    "One": "永久"
-  },
-  "Error": {
-    "One": "錯誤"
-  },
-  "IDNotExist": {
-    "One": "ID 不存在"
-  },
-  "RemoteDesktopOffline": {
-    "One": "遠端電腦不線上"
-  },
-  "KeyMismatch": {
-    "One": "KEY 不匹配"
-  },
-  "KeyOveruse": {
-    "One": "KEY 使用過度"
   },
   "Link": {
     "One": "連結"
@@ -334,9 +286,6 @@
   },
   "CopyFailed": {
     "One": "複製失敗"
-  },
-  "Timeout": {
-    "One": "超時"
   },
   "AuditConnLog": {
     "One": "連線日誌"
@@ -481,12 +430,6 @@
   },
   "User": {
     "One": "使用者"
-  },
-  "ShareRecord": {
-    "One": "分享記錄"
-  },
-  "Second": {
-    "One": "秒"
   },
   "Captcha": {
     "One": "驗證碼"

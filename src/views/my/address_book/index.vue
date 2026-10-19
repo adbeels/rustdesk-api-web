@@ -169,13 +169,11 @@
   import { onActivated, onMounted, reactive, ref, watch } from 'vue'
   import { useBatchUpdateTagsRepositories, useRepositories } from '@/views/address_book'
   import { T } from '@/utils/i18n'
-  import { useAppStore } from '@/store/app'
   import { connectByClient } from '@/utils/peer'
   import { handleClipboard } from '@/utils/clipboard'
   import { CopyDocument } from '@element-plus/icons-vue'
   import PlatformIcons from '@/components/icons/platform.vue'
 
-  const appStore = useAppStore()
   const {
     listRes,
     listQuery,

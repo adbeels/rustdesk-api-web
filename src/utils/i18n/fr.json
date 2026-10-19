@@ -286,58 +286,8 @@
   "PleaseSelectData": {
     "One": "Veuillez sélectionner des données"
   },
-  "PasswordType": {
-    "One": "Type de mot de passe"
-  },
-  "OncePassword": {
-    "One": "Mot de passe à usage unique"
-  },
-  "FixedPassword": {
-    "One": "Mot de passe fixe"
-  },
-  "FixedPasswordWarning": {
-    "One": "Les mots de passe fixes peuvent être divulgués, veuillez donc les utiliser avec prudence et l'utilisation de mots de passe à usage unique est recommandée"
-  },
   "ExpireTime": {
     "One": "Heure d'expiration"
-  },
-  "Minutes": {
-    "One": "{param} Minute",
-    "Other": "{param} Minutes"
-  },
-  "Hours": {
-    "One": "{param} Heure",
-    "Other": "{param} Heures"
-  },
-  "Days": {
-    "One": "{param} Jour",
-    "Other": "{param} Jours"
-  },
-  "Weeks": {
-    "One": "{param} Semaine",
-    "Other": "{param} Semaines"
-  },
-  "Months": {
-    "One": "{param} Mois",
-    "Other": "{param} Mois"
-  },
-  "Forever": {
-    "One": "Forever"
-  },
-  "Error": {
-    "One": "Erreur"
-  },
-  "IDNotExist": {
-    "One": "L'ID n'existe pas"
-  },
-  "RemoteDesktopOffline": {
-    "One": "Le bureau à distance est hors ligne"
-  },
-  "KeyMismatch": {
-    "One": "Non-correspondance de clé"
-  },
-  "KeyOveruse": {
-    "One": "Surutilisation de clé"
   },
   "Link": {
     "One": "Lien"
@@ -347,9 +297,6 @@
   },
   "CopyFailed": {
     "One": "Copie échouée"
-  },
-  "Timeout": {
-    "One": "Expiration du délai"
   },
   "AuditConnLog": {
     "One": "Journal de connexion"
@@ -474,12 +421,6 @@
   },
   "User": {
     "One": "Utilisateur"
-  },
-  "ShareRecord": {
-    "One": "Enregistrement des partages"
-  },
-  "Second": {
-    "One": "Seconde"
   },
   "Captcha": {
     "One": "Captcha"

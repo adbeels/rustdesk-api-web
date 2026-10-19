@@ -33,6 +33,9 @@ const conf = {
   build: {
     target: 'es2020',
     minify: 'oxc', // Vite 8: el minificador por omisión es oxc; esbuild ya no viene incluido
+    // El chunk más grande es Element Plus completo (~780 kB, ~230 kB gzip, se cachea). Bajarlo exige
+    // importarlo por componente; no vale para una consola interna. Ver MANTENIMIENTO.md.
+    chunkSizeWarningLimit: 800,
     manifest: false, // 是否产出maifest.json
     sourcemap: false, // 是否产出soucemap.json
     emptyOutDir: true,

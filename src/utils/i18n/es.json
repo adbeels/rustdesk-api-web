@@ -283,61 +283,8 @@
   "PleaseSelectData": {
     "One": "Por favor, seleccione datos"
   },
-  "PasswordType": {
-    "One": "Tipo de contraseña"
-  },
-  "OncePassword": {
-    "One": "Contraseña de un solo uso"
-  },
-  "FixedPassword": {
-    "One": "Contraseña fija"
-  },
-  "FixedPasswordWarning": {
-    "One": "Las contraseñas fijas pueden ser filtradas, por favor úselas con precaución. Se recomienda usar contraseñas de un solo uso."
-  },
   "ExpireTime": {
     "One": "Tiempo de expiración"
-  },
-  "ShareByWebClient": {
-    "One": "Compartir por cliente web"
-  },
-  "Minutes": {
-    "One": "{param} minuto",
-    "Other": "{param} minutos"
-  },
-  "Hours": {
-    "One": "{param} hora",
-    "Other": "{param} horas"
-  },
-  "Days": {
-    "One": "{param} día",
-    "Other": "{param} días"
-  },
-  "Weeks": {
-    "One": "{param} semana",
-    "Other": "{param} semanas"
-  },
-  "Months": {
-    "One": "{param} mes",
-    "Other": "{param} meses"
-  },
-  "Forever": {
-    "One": "Para siempre"
-  },
-  "Error": {
-    "One": "Error"
-  },
-  "IDNotExist": {
-    "One": "El ID no existe"
-  },
-  "RemoteDesktopOffline": {
-    "One": "El escritorio remoto está fuera de línea"
-  },
-  "KeyMismatch": {
-    "One": "La clave no coincide"
-  },
-  "KeyOveruse": {
-    "One": "Uso excesivo de la clave"
   },
   "Link": {
     "One": "Enlace"
@@ -347,9 +294,6 @@
   },
   "CopyFailed": {
     "One": "Copia fallida"
-  },
-  "Timeout": {
-    "One": "Tiempo de espera agotado"
   },
   "AuditConnLog": {
     "One": "Registro de conexiones"
@@ -471,12 +415,6 @@
   },
   "User": {
     "One": "Usuario"
-  },
-  "ShareRecord": {
-    "One": "Registro de compartición"
-  },
-  "Second": {
-    "One": "Segundo"
   },
   "Captcha": {
     "One": "Captcha"

@@ -237,7 +237,6 @@
   import { timeAgo } from '@/utils/time'
   import { jsonToCsv, downBlob } from '@/utils/file'
   import { loadAllUsers } from '@/global'
-  import { useAppStore } from '@/store/app'
   import { connectByClient } from '@/utils/peer'
   import { ArrowDown, ArrowUp, CopyDocument, Setting } from '@element-plus/icons-vue'
   import { handleClipboard } from '@/utils/clipboard'
@@ -246,7 +245,6 @@
   import createABForm from '@/views/peer/createABForm.vue'
   import { UploadFilled } from '@element-plus/icons-vue'
 
-  const appStore = useAppStore()
 
   //group
   const groupListRes = reactive({

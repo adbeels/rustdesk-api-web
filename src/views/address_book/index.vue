@@ -175,13 +175,11 @@
   import { T } from '@/utils/i18n'
   import { useRoute } from 'vue-router'
   import { connectByClient } from '@/utils/peer'
-  import { useAppStore } from '@/store/app'
   import { handleClipboard } from '@/utils/clipboard'
   import { CopyDocument } from '@element-plus/icons-vue'
   import PlatformIcons from '@/components/icons/platform.vue'
   import { loadAllUsers } from '@/global'
 
-  const appStore = useAppStore()
   const route = useRoute()
   const { allUsers, getAllUsers } = loadAllUsers()
 
