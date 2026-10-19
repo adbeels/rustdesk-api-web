@@ -1,4 +1,7 @@
 # RustDesk API Web
+
+> **Fork mantenido por adbeels** de [lejianwen/rustdesk-api-web](https://github.com/lejianwen/rustdesk-api-web) (MIT, crédito a lejianwen), consola de [adbeels/rustdesk-api](https://github.com/adbeels/rustdesk-api). Dependencias al día y registro de cambios en [MANTENIMIENTO.md](MANTENIMIENTO.md).
+
 # 基于 Vue3 + Element Plus 的后台, 适用于 [RustDesk API](https://github.com/lejianwen/rustdesk-api)
 
 <a href="https://github.com/vuejs/vue-next">
