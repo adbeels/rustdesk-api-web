@@ -275,56 +275,8 @@
   "PleaseSelectData": {
     "One": "데이터를 선택하십시오"
   },
-  "PasswordType": {
-    "One": "비밀번호 유형"
-  },
-  "OncePassword": {
-    "One": "일회용 비밀번호"
-  },
-  "FixedPassword": {
-    "One": "고정 비밀번호"
-  },
-  "FixedPasswordWarning": {
-    "One": "고정 비밀번호는 유출 위험이 있으므로 주의하여 사용하십시오. 일회용 비밀번호를 사용하는 것이 좋습니다."
-  },
   "ExpireTime": {
     "One": "만료 시간"
-  },
-  "ShareByWebClient": {
-    "One": "웹 클라이언트를 통해 공유"
-  },
-  "Minutes": {
-    "One": "{param} 분"
-  },
-  "Hours": {
-    "One": "{param} 시간"
-  },
-  "Days": {
-    "One": "{param} 일"
-  },
-  "Weeks": {
-    "One": "{param} 주"
-  },
-  "Months": {
-    "One": "{param} 개월"
-  },
-  "Forever": {
-    "One": "영구"
-  },
-  "Error": {
-    "One": "오류"
-  },
-  "IDNotExist": {
-    "One": "ID가 존재하지 않음"
-  },
-  "RemoteDesktopOffline": {
-    "One": "원격 컴퓨터가 온라인이 아님"
-  },
-  "KeyMismatch": {
-    "One": "키 불일치"
-  },
-  "KeyOveruse": {
-    "One": "키 과다 사용"
   },
   "Link": {
     "One": "링크"
@@ -334,9 +286,6 @@
   },
   "CopyFailed": {
     "One": "복사 실패"
-  },
-  "Timeout": {
-    "One": "시간 초과"
   },
   "AuditConnLog": {
     "One": "연결 로그"
@@ -457,12 +406,6 @@
   },
   "User": {
     "One": "사용자"
-  },
-  "ShareRecord": {
-    "One": "공유 기록"
-  },
-  "Second": {
-    "One": "초"
   },
   "Captcha": {
     "One": "Captcha"

@@ -115,3 +115,20 @@ dependencias de producción**, es decir, en el código que llega al navegador.
   lugar de `__dirname`. Se quitó el aviso de Vite.
 - `appConfig.web_client` en 0 por omisión.
 - `npm audit`: 0. Build: 1797 módulos (antes 2103). El bundle ya no trae `protobuf` ni `webclient2`.
+
+## 2026-10-18 · Ronda 3: limpieza (commit `117aef2`, va en la imagen `v2.7-adbeels.4`)
+
+- **Fuera los «registros compartidos»**: vistas de admin y de Mi cuenta, `src/api/share_record.js`,
+  `src/api/my/share_record.js` y sus rutas (`ShareRecord`, `MyShareRecordList`). Solo guardaban enlaces del
+  cliente web, y la API del fork ya no los tiene.
+- Fuera `getAppConfig`, `appConfig` y `app()` de `src/api/config.js`: la API ya no tiene `/config/app`.
+- Fuera `useAppStore` sin uso en 4 vistas.
+- `main.js` registra **solo los iconos que se usan por nombre**: 18 en lugar de 293. Un icono nuevo en `meta.icon`
+  o en `<el-icon-…>` hay que agregarlo ahí.
+  - Chunk `_@element-plus`: de 240 a 102 kB. Lo que queda son los iconos que Element Plus usa por dentro.
+- `chunkSizeWarningLimit: 800`, con comentario: el chunk grande es Element Plus completo (~780 kB, ~230 kB gzip,
+  cacheado). Para bajarlo habría que importarlo por componente con plugins nuevos; no vale para una consola
+  interna.
+- i18n: fuera 19 claves que solo usaba el cliente web (tiempos de expiración, tipos de contraseña y errores de
+  rendezvous) en los 7 idiomas.
+- `npm audit`: 0. Build sin avisos.

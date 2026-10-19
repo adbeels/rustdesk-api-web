@@ -7,12 +7,6 @@ export function server () {
   })
 }
 
-export function app () {
-  return request({
-    url: '/config/app',
-    method: 'get',
-  })
-}
 
 export function admin () {
   return request({

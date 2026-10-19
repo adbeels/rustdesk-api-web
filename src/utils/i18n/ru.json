@@ -283,61 +283,8 @@
   "PleaseSelectData": {
     "One": "Пожалуйста, выберите данные"
   },
-  "PasswordType": {
-    "One": "Тип пароля"
-  },
-  "OncePassword": {
-    "One": "Одноразовый пароль"
-  },
-  "FixedPassword": {
-    "One": "Фиксированный пароль"
-  },
-  "FixedPasswordWarning": {
-    "One": "Фиксированные пароли могут быть скомпрометированы, поэтому используйте их с осторожностью; рекомендуется использовать одноразовые пароли"
-  },
   "ExpireTime": {
     "One": "Время истечения"
-  },
-  "ShareByWebClient": {
-    "One": "Поделиться через веб-клиент"
-  },
-  "Minutes": {
-    "One": "{param} минута",
-    "Other": "{param} минуты"
-  },
-  "Hours": {
-    "One": "{param} час",
-    "Other": "{param} часа"
-  },
-  "Days": {
-    "One": "{param} день",
-    "Other": "{param} дня"
-  },
-  "Weeks": {
-    "One": "{param} неделя",
-    "Other": "{param} недели"
-  },
-  "Months": {
-    "One": "{param} месяц",
-    "Other": "{param} месяца"
-  },
-  "Forever": {
-    "One": "Навсегда"
-  },
-  "Error": {
-    "One": "Ошибка"
-  },
-  "IDNotExist": {
-    "One": "ID не существует"
-  },
-  "RemoteDesktopOffline": {
-    "One": "Удаленный рабочий стол отключен"
-  },
-  "KeyMismatch": {
-    "One": "Несоответствие ключа"
-  },
-  "KeyOveruse": {
-    "One": "Чрезмерное использование ключа"
   },
   "Link": {
     "One": "Ссылка"
@@ -347,9 +294,6 @@
   },
   "CopyFailed": {
     "One": "Ошибка копирования"
-  },
-  "Timeout": {
-    "One": "Время ожидания истекло"
   },
   "AuditConnLog": {
     "One": "Журнал соединений"
@@ -472,12 +416,6 @@
   "User": {
     "One": "Пользователь"
   },
-  "ShareRecord": {
-    "One": "Запись обмена"
-  },
-  "Second": {
-    "One": "Секунда"
-  },
   "Captcha": {
     "One": "Captcha"
   },
@@ -536,4 +474,3 @@
     "One": "Примечание"
   }
 }
-

@@ -7,7 +7,7 @@ import ru from 'element-plus/es/locale/lang/ru'
 import fr from 'element-plus/es/locale/lang/fr'
 import es from 'element-plus/es/locale/lang/es'
 import zhTw from 'element-plus/es/locale/lang/zh-tw'
-import { admin, app, server } from '@/api/config'
+import { admin, server } from '@/api/config'
 
 const langs = {
   'zh-CN': { name: '中文', value: zhCn, sideBarWidth: '210px' },
@@ -29,9 +29,6 @@ export const useAppStore = defineStore('App', {
       langs: langs,
       lang: defaultLang,
       locale: langs[defaultLang] ? langs[defaultLang] : langs['en'],
-      appConfig: {
-        web_client: 0,
-      },
       rustdeskConfig: {
         'id_server': '',
         'key': '',
@@ -55,15 +52,8 @@ export const useAppStore = defineStore('App', {
       this.setLang(v)
     },
     loadConfig () {
-      this.getAppConfig()
       this.getAdminConfig()
       this.loadRustdeskConfig()
-    },
-    getAppConfig () {
-      console.log('getAppConfig')
-      return app().then(res => {
-        this.setting.appConfig = res.data
-      })
     },
     getAdminConfig () {
       console.log('getAdminConfig')
