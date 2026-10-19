@@ -19,8 +19,7 @@ const langs = {
   'zh-TW': { name: '中文繁体', value: zhTw, sideBarWidth: '210px' },
 }
 const defaultLang = localStorage.getItem('lang') || navigator.language || 'zh-CN'
-export const useAppStore = defineStore({
-  id: 'App',
+export const useAppStore = defineStore('App', {
   state: () => ({
     setting: {
       title: 'Rustdesk API Admin',

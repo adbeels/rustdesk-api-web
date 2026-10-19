@@ -32,7 +32,7 @@ const conf = {
   },
   build: {
     target: 'es2020',
-    minify: 'esbuild', // 是否进行压缩,boolean | 'terser' | 'esbuild',默认使用 esbuild
+    minify: 'oxc', // Vite 8: el minificador por omisión es oxc; esbuild ya no viene incluido
     manifest: false, // 是否产出maifest.json
     sourcemap: false, // 是否产出soucemap.json
     emptyOutDir: true,
