@@ -5,10 +5,6 @@ updates:
     directory: /
     schedule:
       interval: weekly
-    ignore:
-      # message.ts se generó para protobufjs 7 (ver MANTENIMIENTO.md)
-      - dependency-name: protobufjs
-        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:

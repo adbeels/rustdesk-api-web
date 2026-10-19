@@ -7,9 +7,7 @@ es de lejianwen. Upstream no tiene commits desde el 2025-08-31 (`3998c2a`).
 - La consola no se publica sola. La imagen de la API (`Dockerfile.adbeels` en adbeels/rustdesk-api) la construye
   desde **un commit fijo** de este fork. Para cambiar la consola: se fusiona aquí y se sube el commit allá.
 - CI (`.github/workflows/revisar.yml`) corre `npm ci --ignore-scripts`, `npm audit` y `npm run build` en cada push y PR.
-- No se agregan funciones del cliente web (retirado por DMCA). El código para compartir con el cliente web
-  (`src/utils/webclient`) sigue aquí, como en upstream, pero sus botones solo aparecen con `web_client = 1`, y la
-  API del fork lo trae en 0.
+- Sin cliente web (retirado por DMCA): desde la ronda 2 ya no queda código para él en la consola.
 
 ## 2026-10-18 · Línea base y primera actualización
 
@@ -97,9 +95,23 @@ dependencias de producción**, es decir, en el código que llega al navegador.
 
 ### Pendiente
 
-- `@element-plus/icons` 0.0.11 está obsoleto; el reemplazo es `@element-plus/icons-vue`. Se usa en 12 vistas.
-  `npm audit` no lo marca.
-- Vite avisa que `vite.config.js` mezcla ESM con CommonJS. Hoy funciona; habrá que pasarlo a `.mjs` (usa `__dirname`)
-  antes de que Vite cambie el cargador por omisión.
-- Evaluar si se quita del todo el código del cliente web (`src/utils/webclient`, `shareByWebClient.vue` y los
-  botones «Web Client»). Hoy está oculto por configuración.
+- ~~`@element-plus/icons`~~, ~~`vite.config.mjs`~~ y ~~código del cliente web~~: hechos en la ronda 2.
+
+## 2026-10-18 · Ronda 2 (commit `cb0eb51`, va en la imagen `v2.7-adbeels.3`)
+
+- **Fuera el cliente web.**
+  - Se borraron `src/utils/webclient.js`, `src/utils/webclient/` (protobuf generado) y `shareByWebClient.vue`.
+  - Se quitaron los botones «Web Client» y «Compartir por cliente web» de dispositivos y libretas, y
+    `shareByWebClient` de `src/api`.
+  - Ya no se escriben en `localStorage` las claves `wc-*`:
+    - `wc-option:local:access_token` guardaba **el token del admin** y no se borraba al cerrar sesión. Ahora
+      `removeToken` la limpia, por si quedó de una versión anterior.
+    - `wc-key`, `wc-api-server` y `wc-custom-rendezvous-server` guardaban la configuración del servidor.
+  - Fuera las dependencias que solo usaba ese código: `protobufjs`, `long` y `ts-proto`.
+- Fuera `src/views/my/address_book/indexv2.vue`: no tenía ruta.
+- `@element-plus/icons` 0.0.11 (obsoleto) → **`@element-plus/icons-vue` 2.3.2**. Tiene los mismos 280 nombres, así
+  que solo cambia el import.
+- `vite.config.js` → **`vite.config.mjs`**, ESM nativo: `fileURLToPath(new URL('./src', import.meta.url))` en
+  lugar de `__dirname`. Se quitó el aviso de Vite.
+- `appConfig.web_client` en 0 por omisión.
+- `npm audit`: 0. Build: 1797 módulos (antes 2103). El bundle ya no trae `protobuf` ni `webclient2`.
