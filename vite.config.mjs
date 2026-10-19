@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
-import * as path from 'path'
+import { fileURLToPath } from 'node:url'
 import * as dotenv from 'dotenv'
-import * as fs from 'fs'
+import * as fs from 'node:fs'
 import vue from '@vitejs/plugin-vue'
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
@@ -12,7 +12,7 @@ for (const k in envConfig) {
 }
 
 let alias = {
-  '@': path.resolve(__dirname, './src'),
+  '@': fileURLToPath(new URL('./src', import.meta.url)),
   'vue$': 'vue/dist/vue.runtime.esm-bundler.js',
 }
 
