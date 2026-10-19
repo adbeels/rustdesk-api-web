@@ -20,8 +20,7 @@ function filterRoute (routes, enableNames) {
   })
 }
 
-export const useRouteStore = defineStore({
-  id: 'router',
+export const useRouteStore = defineStore('router', {
   state: () => ({
     routes: [],
     activeRoute: '',

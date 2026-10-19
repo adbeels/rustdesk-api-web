@@ -1,7 +1,6 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
 
-export const useTagsStore = defineStore({
-  id: 'tags',
+export const useTagsStore = defineStore('tags', {
   state: () => ({
     tags: [],
     cached: [],

@@ -5,8 +5,7 @@ import { useRouteStore } from '@/store/router'
 import { useAppStore } from '@/store/app'
 import { oidcAuth, oidcQuery } from '@/api/login'
 
-export const useUserStore = defineStore({
-  id: 'user',
+export const useUserStore = defineStore('user', {
   state: () => ({
     nickname: '',
     username: '',
