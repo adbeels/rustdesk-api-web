@@ -1,5 +1,5 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
-import { current, login } from '@/api/user'
+import { current, login, logout as logoutApi } from '@/api/user'
 import { setToken, removeToken, setCode, removeCode } from '@/utils/auth'
 import { useRouteStore } from '@/store/router'
 import { useAppStore } from '@/store/app'
@@ -17,13 +17,20 @@ export const useUserStore = defineStore('user', {
   }),
 
   actions: {
-    logout () {
+    // Cierre local: borra el token y los datos de sesión de este navegador
+    clearSession () {
       removeToken()
       removeCode()
       this.$patch({
         name: '',
         role: {},
       })
+    },
+    // Cierre completo: primero el servidor invalida el token y después se limpia el navegador.
+    // Antes solo se borraba aquí y el token seguía sirviendo hasta caducar.
+    async logout () {
+      await logoutApi().catch(_ => false)
+      this.clearSession()
     },
 
     saveUserData (userData) {

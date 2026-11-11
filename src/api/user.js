@@ -8,6 +8,16 @@ export function login (data) {
   })
 }
 
+// El servidor invalida el token de la cabecera. Tiempo de espera corto: cerrar sesión no debe
+// quedarse esperando si el servidor no responde.
+export function logout () {
+  return request({
+    url: '/logout',
+    method: 'post',
+    timeout: 5000,
+  })
+}
+
 export function current () {
   return request({
     url: '/user/current',
