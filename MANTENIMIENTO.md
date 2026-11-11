@@ -6,7 +6,8 @@ es de lejianwen. Upstream no tiene commits desde el 2025-08-31 (`3998c2a`).
 
 - La consola no se publica sola. La imagen de la API (`Dockerfile.adbeels` en adbeels/rustdesk-api) la construye
   desde **un commit fijo** de este fork. Para cambiar la consola: se fusiona aquí y se sube el commit allá.
-- CI (`.github/workflows/revisar.yml`) corre `npm ci --ignore-scripts`, `npm audit` y `npm run build` en cada push y PR.
+- CI (`.github/workflows/revisar.yml`) corre `npm ci --ignore-scripts`, `npm audit` y `npm run build` en cada push
+  y PR, y además cada lunes.
 - Sin cliente web (retirado por DMCA): desde la ronda 2 ya no queda código para él en la consola.
 
 ## 2026-10-18 · Línea base y primera actualización
@@ -132,3 +133,26 @@ dependencias de producción**, es decir, en el código que llega al navegador.
 - i18n: fuera 19 claves que solo usaba el cliente web (tiempos de expiración, tipos de contraseña y errores de
   rendezvous) en los 7 idiomas.
 - `npm audit`: 0. Build sin avisos.
+
+## 2026-11-11 · Ronda 4: seguridad (va en la imagen `v2.7-adbeels.5`)
+
+Sale de una revisión de seguridad de todo el proyecto (2026-11-10). El detalle del lado del servidor está en el
+`MANTENIMIENTO.md` de adbeels/rustdesk-api.
+
+- **Cerrar sesión ahora invalida el token en el servidor.** Antes la consola solo borraba el token del navegador
+  y nunca llamaba a la API, así que el token seguía sirviendo hasta caducar (7 días, renovables con el uso).
+  - `userStore.logout()` llama a `POST /api/admin/logout` (con 5 s de espera como máximo) y después limpia el
+    navegador, responda o no el servidor.
+  - `userStore.clearSession()` es el cierre solo local. Se usa cuando el servidor ya rechazó o invalidó el token:
+    en el guardián de rutas y después de cambiar la contraseña.
+- **La pantalla de autorización web muestra la IP** de quien pidió el acceso, además del nombre y el ID del
+  equipo. Los tres datos los manda quien inicia el flujo; la IP es el único que el servidor ve por su cuenta.
+- `follow-redirects` 1.16.1 → 1.16.3 (GHSA-mrwp-f3q8-3g9p, alta). Llega por axios y solo se usa en Node: se
+  verificó que no está en el bundle del navegador. Se editó solo esa entrada del lockfile.
+- CI: además de cada push y PR, `revisar.yml` corre **cada lunes** y a mano. Si `npm audit` encuentra algo,
+  la corrida falla y GitHub avisa por correo. Node 24.22.2, igual que la imagen.
+- `npm audit`: 0. Build sin avisos.
+
+**Corrección a lo anotado en octubre:** se dijo que Dependabot abriría PR cada semana. No ocurre: GitHub no activa
+Dependabot en forks. `.github/dependabot.yml` queda listo por si se activa en los ajustes del repo; mientras
+tanto, quien vigila es la corrida semanal.

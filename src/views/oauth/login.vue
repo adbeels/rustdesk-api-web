@@ -9,6 +9,9 @@
         <el-form-item label="ID">
           <div class="impt">{{ oauthInfo.id }}</div>
         </el-form-item>
+        <el-form-item label="IP">
+          <div class="impt">{{ oauthInfo.ip }}</div>
+        </el-form-item>
         <el-form-item label-width="0">
           <el-button style="width: 100%" v-if="!resStatus" type="success" size="large" @click="toConfirm">{{ T('ConfirmOauth') }}</el-button>
         </el-form-item>

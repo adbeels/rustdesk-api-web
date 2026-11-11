@@ -1,9 +1,14 @@
-# Fork adbeels: npm audit y build en cada push y PR. Ver MANTENIMIENTO.md.
+# Fork adbeels: npm audit y build en cada push y PR, y una vez por semana aunque nadie toque el repo.
+# La corrida semanal es la que avisa (falla y GitHub manda correo) cuando sale una vulnerabilidad nueva
+# en una dependencia. Ver MANTENIMIENTO.md.
 name: Revisar
 
 on:
   push:
   pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 12 * * 1' # lunes 12:17 UTC
 
 permissions:
   contents: read
@@ -15,7 +20,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: '24.22.0'
+          node-version: '24.22.2'
       - run: npm ci --ignore-scripts --no-fund
       - run: npm audit
       - run: npm run build
